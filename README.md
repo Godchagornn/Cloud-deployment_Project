@@ -1,5 +1,5 @@
 # System Overview
-  ระบบ Task Management System (To-Do List) เป็นระบบที่ช่วยให้ผู้ใช้สามารถ จัดการรายการงาน (Tasks) ของตนเองได้อย่างมีประสิทธิภาพ โดยมีฟังก์ชันหลักคือ การสร้าง (Create), อ่าน (Read), แก้ไข (Update), และลบ (Delete) งาน (CRUD)
+    ระบบ Task Management System (To-Do List) เป็นระบบที่ช่วยให้ผู้ใช้สามารถ จัดการรายการงาน (Tasks) ของตนเองได้อย่างมีประสิทธิภาพ โดยมีฟังก์ชันหลักคือ การสร้าง (Create), อ่าน (Read), แก้ไข (Update), และลบ (Delete) งาน (CRUD)
 ระบบนี้ทำหน้าที่เป็นแพลตฟอร์มส่วนตัวที่ต้องมีการ เข้าสู่ระบบ (Login) เพื่อจัดการข้อมูลงานของผู้ใช้แต่ละคนโดยเฉพาะ
 - วัตถุประสงค์หลัก: ช่วยผู้ใช้ติดตามสถานะงาน, จัดระเบียบสิ่งที่ต้องทำ, และเปลี่ยนแปลงสถานะของงาน (เช่น จาก 'รอดำเนินการ' เป็น 'เสร็จสิ้น')
 - การยืนยันตัวตน: บังคับใช้การยืนยันตัวตน (Authentication) เพื่อให้แน่ใจว่าผู้ใช้แต่ละคนเข้าถึงได้เฉพาะงานของตนเองเท่านั้น
@@ -22,8 +22,8 @@
 # Role and Deliverables
 | บทบาท | ผู้รับผิดชอบหลัก | ฟีเจอร์/ส่วนที่รับผิดชอบ | ผลลัพธ์/ส่งมอบ (Deliverable) |
 | :---: | :---: | :--- | :--- |
-| **Project Manager** | PM (1 คน) | **Deployment Strategy & Quality Gate** | **ไฟล์คอนฟิก CI/CD** ที่ทำงานได้จริง, **เอกสาร Test Spec 5 ชุด**, ยืนยัน **Docker Image** ถูก Push สำเร็จ |
-| **Tester** | Tester (1 คน) | **Automation Testing (Integration/E2E)** | **โค้ด Test Scripts อัตโนมัติ** (สำหรับ Login และ CRUD Flow), ยืนยัน **Integration Test** ผ่าน 100% |
+| **Project Manager** | PM | **Deployment Strategy & Quality Gate** | **ไฟล์คอนฟิก CI/CD** ที่ทำงานได้จริง, **เอกสาร Test Spec 5 ชุด**, ยืนยัน **Docker Image** ถูก Push สำเร็จ |
+| **Tester** | Tester | **Automation Testing (Integration/E2E)** | **โค้ด Test Scripts อัตโนมัติ** (สำหรับ Login และ CRUD Flow), ยืนยัน **Integration Test** ผ่าน 100% |
 | **Developer 1** | Dev 1 | **Authentication API & Containerization** | **Auth API** (Login/Register), **Unit Test** 2 ชุด (Hashing/JWT), **Dockerfile** หลัก |
 | **Developer 2** | Dev 2 | **Task CRUD API & Unit Testing** | **Task CRUD API** ที่ปลอดภัยด้วย Token, **Unit Test** 2 ชุด (Task Create/Read) |
 | **Developer 3** | Dev 3 | **Front-end UI & User Experience** | **หน้า Login/Register UI**, **หน้าแสดงรายการงาน** (UI), เชื่อมต่อ UI เข้ากับ API ได้จริง |
