@@ -24,6 +24,6 @@
 | :---: | :---: | :--- | :--- |
 | **Project Manager** | PM (1 คน) | **Deployment Strategy & Quality Gate** | **ไฟล์คอนฟิก CI/CD** ที่ทำงานได้จริง, **เอกสาร Test Spec 5 ชุด**, ยืนยัน **Docker Image** ถูก Push สำเร็จ |
 | **Tester** | Tester (1 คน) | **Automation Testing (Integration/E2E)** | **โค้ด Test Scripts อัตโนมัติ** (สำหรับ Login และ CRUD Flow), ยืนยัน **Integration Test** ผ่าน 100% |
-| **Developer 1** | Dev 1 (1 คน) | **Authentication API & Containerization** | **Auth API** (Login/Register), **Unit Test** 2 ชุด (Hashing/JWT), **Dockerfile** หลัก |
-| **Developer 2** | Dev 2 (1 คน) | **Task CRUD API & Unit Testing** | **Task CRUD API** ที่ปลอดภัยด้วย Token, **Unit Test** 2 ชุด (Task Create/Read) |
-| **Developer 3** | Dev 3 (1 คน) | **Front-end UI & User Experience** | **หน้า Login/Register UI**, **หน้าแสดงรายการงาน** (UI), เชื่อมต่อ UI เข้ากับ API ได้จริง |
+| **Developer 1** | Dev 1 | **Authentication API & Containerization** | **Auth API** (Login/Register), **Unit Test** 2 ชุด (Hashing/JWT), **Dockerfile** หลัก |
+| **Developer 2** | Dev 2 | **Task CRUD API & Unit Testing** | **Task CRUD API** ที่ปลอดภัยด้วย Token, **Unit Test** 2 ชุด (Task Create/Read) |
+| **Developer 3** | Dev 3 | **Front-end UI & User Experience** | **หน้า Login/Register UI**, **หน้าแสดงรายการงาน** (UI), เชื่อมต่อ UI เข้ากับ API ได้จริง |
