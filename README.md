@@ -1,29 +1,38 @@
-# System Overview
-ระบบ Task Management System (To-Do List) เป็นระบบที่ช่วยให้ผู้ใช้สามารถ จัดการรายการงาน (Tasks) ของตนเองได้อย่างมีประสิทธิภาพ โดยมีฟังก์ชันหลักคือ การสร้าง (Create), อ่าน (Read), แก้ไข (Update), และลบ (Delete) งาน (CRUD)
-ระบบนี้ทำหน้าที่เป็นแพลตฟอร์มส่วนตัวที่ต้องมีการ เข้าสู่ระบบ (Login) เพื่อจัดการข้อมูลงานของผู้ใช้แต่ละคนโดยเฉพาะ
-- วัตถุประสงค์หลัก: ช่วยผู้ใช้ติดตามสถานะงาน, จัดระเบียบสิ่งที่ต้องทำ, และเปลี่ยนแปลงสถานะของงาน (เช่น จาก 'รอดำเนินการ' เป็น 'เสร็จสิ้น')
-- การยืนยันตัวตน: บังคับใช้การยืนยันตัวตน (Authentication) เพื่อให้แน่ใจว่าผู้ใช้แต่ละคนเข้าถึงได้เฉพาะงานของตนเองเท่านั้น
+# Task Management System (TMS)
 
+## Project Overview
+พัฒนาระบบจัดการงาน (Task Management System) สำหรับการสร้าง จัดการ และติดตามสถานะงานแบบง่ายๆ สำหรับผู้ใช้ โดยมีฟีเจอร์พื้นฐาน เช่น Login, Create Task, Read/List Tasks, Update Status, และ Delete Task
 
-# Key Features
-1. การยืนยันตัวตน (User Authentication)
-ฟังก์ชันนี้เป็นไปตามเงื่อนไขของโจทย์ที่กำหนดให้ต้องมี หน้า Login และระบบความปลอดภัยพื้นฐาน:
-- Login / เข้าสู่ระบบ: ผู้ใช้สามารถเข้าถึงระบบได้โดยใช้ชื่อผู้ใช้ (หรืออีเมล) และรหัสผ่านที่ถูกต้อง
-- Register / ลงทะเบียน: อนุญาตให้ผู้ใช้ใหม่สร้างบัญชีเพื่อเริ่มใช้งานระบบ
-- Token-Based Security: API ทุกรายการที่เกี่ยวข้องกับการจัดการงานจะถูกป้องกันด้วย Access Token เพื่อให้มั่นใจว่าข้อมูลเป็นส่วนตัวและเข้าถึงได้เฉพาะเจ้าของเท่านั้น
-2. การจัดการงาน (Task Management - CRUD)
-เมื่อผู้ใช้เข้าสู่ระบบแล้ว จะสามารถดำเนินการจัดการงานได้อย่างอิสระผ่านอินเทอร์เฟซผู้ใช้และ Back-end API:
-- Create (เพิ่ม): ผู้ใช้สามารถเพิ่มรายการงานใหม่ (Task) พร้อมรายละเอียด เช่น ชื่อ, คำอธิบาย, และกำหนดวันส่งงาน
-- Read (อ่าน/แสดง): ระบบแสดงรายการงานทั้งหมดของผู้ใช้ปัจจุบัน
-- Update (แก้ไข): ผู้ใช้สามารถแก้ไขรายละเอียดของงาน หรือเปลี่ยนแปลง สถานะของงาน (เช่น Pending, In Progress, หรือ Done)
-- Delete (ลบ): ผู้ใช้สามารถลบรายการงานที่ไม่ต้องการออกจากระบบอย่างถาวร
+## Team Members
+- **PM:** 672110132 นางสาวกชกร กิติมา
+- **Tester:** 672110235 นางสาวปุนภยา กรกฎกำจร
+- **Developer:**
+  1. 672110242 นายยศัสวิน ปัญญญาไหว
+  2. 672100141 นายถนันณัฏฐ์ พฤกษ์สกุลวงศ์
+  3. 672110236 นายพศวีร์ ตันติวัฒนชัยกุล
+ 
+## Key Features
+1.  **Login Page:** ผู้ใช้สามารถเข้าสู่ระบบด้วย Username/Password
+2.  **Create Task:** เพิ่มงานใหม่
+3.  **List Tasks:** แสดงรายการงานทั้งหมด
+4.  **Update Status:** เปลี่ยนสถานะงาน (เช่น Pending, Done)
+5.  **Delete Task:** ลบงานออกจากระบบ
 
+## Deployment Process
+1.  **Push Code:** นักพัฒนาส่งโค้ดขึ้น GitHub Branch ที่กำหนด
+2.  **Build & Install:** ระบบ CI/CD ทำการ Build โปรเจกต์และติดตั้ง Dependencies อัตโนมัติ
+3.  **Run Tests:** รัน Unit Test และ Integration Test เพื่อยืนยันความถูกต้อง
+4.  **Create Docker Image:** สร้าง Image ของระบบสำหรับ Container
+5.  **Push to Container Repository:** ส่ง Docker Image ไปยัง Docker Hub หรือ GitHub Container Registry
+6.  **Deploy to Environment:** ระบบนำ Image ไป Deploy ยัง Staging หรือ Production Server
+7.  **Verify Deployment:** ตรวจสอบการทำงานเบื้องต้นของระบบ (Smoke Test)
 
-# Role and Deliverables
-| บทบาท | ผู้รับผิดชอบหลัก | ฟีเจอร์/ส่วนที่รับผิดชอบ | ผลลัพธ์/ส่งมอบ (Deliverable) |
-| :---: | :---: | :--- | :--- |
-| **Project Manager** | PM | **Deployment Strategy & Quality Gate** | **ไฟล์คอนฟิก CI/CD** ที่ทำงานได้จริง, **เอกสาร Test Spec 5 ชุด**, ยืนยัน **Docker Image** ถูก Push สำเร็จ |
-| **Tester** | Tester | **Automation Testing (Integration/E2E)** | **โค้ด Test Scripts อัตโนมัติ** (สำหรับ Login และ CRUD Flow), ยืนยัน **Integration Test** ผ่าน 100% |
-| **Developer 1** | Dev 1 | **Authentication API & Containerization** | **Auth API** (Login/Register), **Unit Test** 2 ชุด (Hashing/JWT), **Dockerfile** หลัก |
-| **Developer 2** | Dev 2 | **Task CRUD API & Unit Testing** | **Task CRUD API** ที่ปลอดภัยด้วย Token, **Unit Test** 2 ชุด (Task Create/Read) |
-| **Developer 3** | Dev 3 | **Front-end UI & User Experience** | **หน้า Login/Register UI**, **หน้าแสดงรายการงาน** (UI), เชื่อมต่อ UI เข้ากับ API ได้จริง |
+## Test Specification (Test Spec)
+
+| Test ID | Function | Description | Input | Expected Output | Assigned Role |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| TS01 | loginSuccess() | ตรวจสอบ Login สำเร็จ | username/Password ถูกต้อง | สามารถเข้าสู่ระบบและไปหน้า Task List | Developer (Dev1) |
+| TS02 | createTask() | เพิ่มงานใหม่ | Task Name: "Test Task" | งานแสดงใน Task List | Developer (Dev1) |
+| TS03 | loginFail() | ตรวจสอบ Login ล้มเหลว | Username/Password ไม่ถูกต้อง | แสดงข้อความ “Login Failed” | Developer (Dev2) |
+| TS04 | updateStatus() | เปลี่ยนสถานะงาน | เลือกงาน > Update Status เป็น Done | สถานะงานเปลี่ยนเป็น Done | Developer (Dev2) |
+| TS05 | deleteTask() | ลบงาน | เลือกงาน > Delete | งานถูกลบจาก Task List | Developer (Dev3) |
