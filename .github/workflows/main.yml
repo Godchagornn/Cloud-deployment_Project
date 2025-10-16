@@ -28,13 +28,4 @@ jobs:
         run: npm run build
 
       - name: 5. Run Test1.js manually
-        run: |
-          output=$(node dist/Test1.js)
-          echo "Output: $output"
-
-          if [ "$output" -eq 0 ]; then
-            echo "passed"
-          else
-            echo "failed"
-            exit 1
-          fi
+        run: npm test

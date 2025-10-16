@@ -14,14 +14,14 @@ describe("TS04 - updateStatus()", () => {
 
     await request(app)
       .post("/tasks")
-      .set("Authorization", Bearer ${token})
+      .set("Authorization", `Bearer ${token}`)
       .send({ name: "Test Task" });
   });
 
   it("should update the task status to Done", async () => {
     const res = await request(app)
       .put("/tasks/1/status")
-      .set("Authorization", Bearer ${token})
+      .set("Authorization", `Bearer ${token}`)
       .send({ status: "Done" });
 
     expect(res.status).toBe(200);
