@@ -60,7 +60,7 @@ __pycache__/
 
 # Docker / Containers (ถ้ามี)
 *.dockerfile
-Dockerfile
+dockerfile
 docker-compose.yml
 
 # GitHub Actions temporary
