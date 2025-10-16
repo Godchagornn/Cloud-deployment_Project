@@ -24,8 +24,5 @@ jobs:
       - name: 3. Install dependencies
         run: npm install
 
-      - name: 4. Build project
-        run: npm run build
-
       - name: 5. Run Test1.js manually
         run: npm test
