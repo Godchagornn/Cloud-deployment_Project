@@ -34,7 +34,15 @@ app.post("/tasks", auth, (req, res) => {
 app.get("/tasks", auth, (req, res) => {
   res.json(TASKS);
 });
-
+app.delete("/tasks/:id", auth, (req, res) => {
+  const id = Number(req.params.id);
+  const idx = TASKS.findIndex(t => t.id === id);
+  if (idx === -1) {
+    return res.status(404).json({ message: "Task not found" });
+  }
+  TASKS.splice(idx, 1);
+  return res.status(204).end();
+});
 app.post("/__reset", (req, res) => {
   TASKS = [];
   TOKENS.clear();
