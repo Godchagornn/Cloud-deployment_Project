@@ -59,8 +59,6 @@ __pycache__/
 *.pid.lock
 
 # Docker / Containers (ถ้ามี)
-*.dockerfile
-dockerfile
 docker-compose.yml
 
 # GitHub Actions temporary
