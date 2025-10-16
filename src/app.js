@@ -48,5 +48,17 @@ app.post("/__reset", (req, res) => {
   TOKENS.clear();
   res.status(204).end();
 });
+app.put("/tasks/:id/status", auth, (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body || {};
+
+  const task = TASKS.find(t => t.id === Number(id));
+  if (!task) {
+    return res.status(404).json({ message: "Task not found" });
+  }
+
+  task.status = status || "Pending";
+  return res.status(200).json({ message: "Status updated", task });
+});
 
 export default app;
