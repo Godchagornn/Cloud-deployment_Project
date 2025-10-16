@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "repository": {
     "type": "git",
